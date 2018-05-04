@@ -1,6 +1,5 @@
 # Summary
 
-* [Introduction](README.md)
 * [复制到粘贴板Copied to clipboard](copy.md)
 * [Input强制输入正整数](input.md)
 * [多行省略号···](ellipsis.md)
