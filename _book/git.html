@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>git · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="git.html" />
+    <link rel="next" href="gitbook.html" />
     
+    
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -100,7 +102,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="git.html">
+        <li class="chapter active" data-level="1.2" data-path="git.html">
             
                 <a href="git.html">
             
@@ -416,7 +418,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >git</a>
     </h1>
 </div>
 
@@ -431,8 +433,34 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;">&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;</h1>
+                                <pre><code>git merge   (branchname)    &#x5206;&#x652F;&#x88AB;&#x548C;&#x5230;&#xB7;&#xB7;&#xB7;&#x4E0A;
 
+git remote                                &#x67E5;&#x770B;&#x8FDC;&#x7AEF;
+git push origin  (branchname)      &#x63A8;&#x9001;
+
+git branch   (branchname)             &#x67E5;&#x770B;&#x5206;&#x652F;, &#x62C9;&#x65B0;&#x5206;&#x652F;
+git branch -a  (branchname)           &#x67E5;&#x770B;&#x6240;&#x6709;&#x5206;&#x652F;
+
+git checkout -b   (branchname)     &#x5207;&#x6362;&#x521B;&#x5EFA;&#x5206;&#x652F;
+git push --set-upstream origin  (branchname)   &#x9996;&#x6B21;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7AEF;
+git checkout   (branchname)         &#x5207;&#x6362;&#x5206;&#x652F;, &#x68C0;&#x51FA;
+git fetch -p                               &#x68C0;&#x51FA;
+git checkout url                            &#x64A4;&#x9500;&#x6682;&#x5B58;&#x672C;&#x5730;
+
+git branch -d    (branchname)          &#x5220;&#x9664;&#x5206;&#x652F;
+git branch -D   (branchname)        &#x5F3A;&#x884C;&#x5220;&#x9664;&#x672A;&#x5408;&#x5E76;&#x7684;&#x5206;&#x652F;
+
+git status
+git  add .                                  &#x63D0;&#x4EA4; &#x2705;
+git  commit -m &#x2018;mdf&#x2019;                    &#x6CE8;&#x91CA; &#x2705;(&#x4EC5;&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;)
+git  commit -am &#x2018;mdd&#x2019;                  &#x6CE8;&#x91CA;&#xFF08;add+m&#xFF09; &#x2705;
+git pull  (master)                     &#x62C9;&#x53D6; &#x2705;&#xFF08;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;master&#x5206;&#x652F;&#x65F6;&#x8D77;&#x4F5C;&#x7528;&#xFF09;
+git push  (master)                     &#x63A8;&#x9001; &#x2705;&#xFF08;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;master&#x5206;&#x652F;&#x65F6;&#x8D77;&#x4F5C;&#x7528;&#xFF09;
+
+git log                                   git&#x4E2D;commit&#x6CE8;&#x91CA;&#x8BB0;&#x5F55;
+git reflog                                git&#x6240;&#x6709;&#x547D;&#x4EE4;&#x7684;&#x8BB0;&#x5F55;&#xFF08;&#x5168;&#xFF09;
+git config --list                         &#x4FE1;&#x606F;&#x5217;&#x8868;
+</code></pre>
                                 
                                 </section>
                             
@@ -459,8 +487,12 @@
 
             
                 
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="git.html" class="navigation navigation-next navigation-unique" aria-label="Next page: git">
+                
+                <a href="gitbook.html" class="navigation navigation-next " aria-label="Next page: gitbook">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -471,7 +503,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"git","level":"1.2","depth":1,"path":"git.md","ref":"git.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-05-04T11:34:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"git","level":"1.2","depth":1,"next":{"title":"gitbook","level":"1.3","depth":1,"path":"gitbook.md","ref":"gitbook.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git.md","mtime":"2018-05-04T11:25:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

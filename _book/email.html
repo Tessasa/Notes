@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>邮箱验证 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="git.html" />
+    <link rel="next" href="background.html" />
     
+    
+    <link rel="prev" href="gradient.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -282,7 +284,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.16" data-path="email.html">
+        <li class="chapter active" data-level="1.16" data-path="email.html">
             
                 <a href="email.html">
             
@@ -416,7 +418,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >邮箱验证</a>
     </h1>
 </div>
 
@@ -431,8 +433,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;">&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;</h1>
-
+                                <p><code>&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;</code></p>
+<pre><code>//&#x5224;&#x65AD;&#x90AE;&#x7BB1;&#x662F;&#x5426;&#x4E3A;&#x7A7A;
+if ($(&apos;.donation-email input&apos;).val().trim() == &apos;&apos;) {
+    utils.alertMessage(&apos;Please enter your email&apos;);
+    return false;
+}
+</code></pre><pre><code>//&#x9A8C;&#x8BC1;&#x90AE;&#x7BB1;&#x662F;&#x5426;&#x6709;&#x6548;
+    var EMAIL = /([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/;
+    if (EMAIL.test($(&apos;.donation-email input&apos;).val()) == false) {
+        utils.alertMessage(&apos;Please enter a valid email&apos;);
+        return false;
+    }
+</code></pre>
                                 
                                 </section>
                             
@@ -459,8 +472,12 @@
 
             
                 
+                <a href="gradient.html" class="navigation navigation-prev " aria-label="Previous page: 竖形进度条渐变">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="git.html" class="navigation navigation-next navigation-unique" aria-label="Next page: git">
+                
+                <a href="background.html" class="navigation navigation-next " aria-label="Next page: background背景">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -471,7 +488,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"git","level":"1.2","depth":1,"path":"git.md","ref":"git.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-05-04T11:34:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"邮箱验证","level":"1.16","depth":1,"next":{"title":"background背景","level":"1.17","depth":1,"path":"background.md","ref":"background.md","articles":[]},"previous":{"title":"竖形进度条渐变","level":"1.15","depth":1,"path":"gradient.md","ref":"gradient.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"email.md","mtime":"2018-05-04T10:37:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>facebook · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="git.html" />
+    <link rel="next" href="link.html" />
     
+    
+    <link rel="prev" href="twitter.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -347,7 +349,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.21" data-path="facebook.html">
+        <li class="chapter active" data-level="1.21" data-path="facebook.html">
             
                 <a href="facebook.html">
             
@@ -416,7 +418,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >facebook</a>
     </h1>
 </div>
 
@@ -431,8 +433,43 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;">&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;</h1>
+                                <pre><code>/**
+ * &#x5206;&#x4EAB;&#x7F51;&#x5740;&#x5230; facebook Message
+ * &#x53C2;&#x8003;&#x7F51;&#x5740;&#xFF1A;
+ * https://developers.facebook.com/docs/sharing/reference/send-dialog
+ */
+obj.fbMessage = function (url, callback) {
+    try {
+        FB.ui({
+            method: &apos;send&apos;,
+            link: url
+        });
+    } catch (e) {
+        console.error(&quot;set up FB JavaScript SDK first&quot;);
+    }
+};
 
+Facebook developer
+https://developers.facebook.com/
+Url Debugger
+https://developers.facebook.com/tools/debug/og/object/
+
+Share&#x5BF9;&#x8BDD;&#x6846;&#xFF1A;
+https://developers.facebook.com/docs/sharing/reference/share-dialog
+Message&#x5BF9;&#x8BDD;&#x6846;&#xFF1A;
+https://developers.facebook.com/docs/sharing/reference/send-dialog
+
+*******************************  Facebook &#x3001;Twitter &#x603B;&#x7ED3;  ****************************
+
+Url Debugger&#xFF1A;
+twitter : https://cards-dev.twitter.com/validator
+facebook: https://developers.facebook.com/tools/debug/og/object/
+google+: http://www.google.com.hk/webmasters/tools/richsnippets?gws_rd=cr
+
+
+&#x8865;&#x5145;&#xFF1A;
+&#x5FAE;&#x4FE1;&#x3001;&#x5FAE;&#x535A;&#x3001;Facebook&#x3001;Twitter&#x7B49;&#x793E;&#x4EA4;&#x5A92;&#x4F53;&#x5206;&#x4EAB;&#x65B9;&#x6848;&#x63A2;&#x7D22;&#xFF1A; http://blog.csdn.net/cj1029/article/details/44466187
+</code></pre>
                                 
                                 </section>
                             
@@ -459,8 +496,12 @@
 
             
                 
+                <a href="twitter.html" class="navigation navigation-prev " aria-label="Previous page: twitter">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="git.html" class="navigation navigation-next navigation-unique" aria-label="Next page: git">
+                
+                <a href="link.html" class="navigation navigation-next " aria-label="Next page: link">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -471,7 +512,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"git","level":"1.2","depth":1,"path":"git.md","ref":"git.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-05-04T11:34:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"facebook","level":"1.21","depth":1,"next":{"title":"link","level":"1.22","depth":1,"path":"link.md","ref":"link.md","articles":[]},"previous":{"title":"twitter","level":"1.20","depth":1,"path":"twitter.md","ref":"twitter.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"facebook.md","mtime":"2018-05-04T10:55:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

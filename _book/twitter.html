@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>twitter · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="git.html" />
+    <link rel="next" href="facebook.html" />
     
+    
+    <link rel="prev" href="gmail.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -334,7 +336,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.20" data-path="twitter.html">
+        <li class="chapter active" data-level="1.20" data-path="twitter.html">
             
                 <a href="twitter.html">
             
@@ -416,7 +418,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >twitter</a>
     </h1>
 </div>
 
@@ -431,8 +433,70 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;">&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;</h1>
+                                <pre><code>Tweet developer
+https://dev.twitter.com
 
+
+&#x53D1;&#x63A8;&#xFF1A;
+https://twitter.com/intent/tweet?text=&amp;url=
+Url Debugger&#xFF1A;
+https://cards-dev.twitter.com/validator
+
+&#x8865;&#x5145;&#xFF1A;
+Tweet Button&#x53D1;&#x9001;&#x6210;&#x529F;&#x540E;&#x56DE;&#x8C03;
+http://www.it610.com/article/670851.htm
+Twitter forms:
+https://twittercommunity.com/t/tweet-intent-response-the-same-for-successful-and-unsuccessful-posts/56780
+How to know when the user tweeted (with custom button):
+http://projs.hackhat.com/how-to-make-a-custom-share-tweet-button-and-know-when-the-user-clicked/
+</code></pre><pre><code>Twitter share
+
+&lt;a class=&quot;twitter-share-button&quot;
+   href=&quot;https://twitter.com/intent/tweet&quot;&gt;Tweet&lt;/a&gt;
+
+&#x6216;&#xFF1A;
+
+&lt;button class=&quot;tweet-this btn-default&quot;&gt;Tweet this!&lt;/button&gt;
+
+// Helper to create the url.
+var tweetUrlBuilder = function (o) {
+    return [
+        &apos;https://twitter.com/intent/tweet?tw_p=tweetbutton&apos;,
+        &apos;&amp;url=&apos;, encodeURI(o.url),
+        &apos;&amp;via=&apos;, o.via,
+        &apos;&amp;text=&apos;, o.text
+    ].join(&apos;&apos;);
+};
+
+// When the button is clicked:
+$(&apos;.tweet-this&apos;).on(&apos;click&apos;, function () {
+    // Create our custom url.
+    var url = tweetUrlBuilder({
+        url: &apos;http://bit.ly/OChT65&apos;,
+        via: &apos;ProJavaScript&apos;,
+        text: &apos;How to make a custom share tweet button and know when the user tweeted&apos;
+    });
+    // Open the window.
+    window.open(url, &apos;Tweet&apos;, &apos;height=500,width=700&apos;);
+});
+
+console.log(&apos;callback:&apos;,callback);
+var callback = function (e) {
+    if (e &amp;&amp; e.data) {
+        var data;
+        try {
+            data = JSON.parse(e.data);
+        } catch (e) {
+            // Don&apos;t care.
+        }
+        if (data &amp;&amp; data.params &amp;&amp; data.params.indexOf(&apos;tweet&apos;) &gt; -1) {
+            alert(&apos;Thanks for the tweet!&apos;);
+        }
+    }
+};
+// Here is the secret ingredient
+window.addEventListener ? window.addEventListener(&quot;message&quot;, callback, !1) : window.attachEvent(&quot;onmessage&quot;, callback)
+</code></pre>
                                 
                                 </section>
                             
@@ -459,8 +523,12 @@
 
             
                 
+                <a href="gmail.html" class="navigation navigation-prev " aria-label="Previous page: gmail">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="git.html" class="navigation navigation-next navigation-unique" aria-label="Next page: git">
+                
+                <a href="facebook.html" class="navigation navigation-next " aria-label="Next page: facebook">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -471,7 +539,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"git","level":"1.2","depth":1,"path":"git.md","ref":"git.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-05-04T11:34:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"twitter","level":"1.20","depth":1,"next":{"title":"facebook","level":"1.21","depth":1,"path":"facebook.md","ref":"facebook.md","articles":[]},"previous":{"title":"gmail","level":"1.19","depth":1,"path":"gmail.md","ref":"gmail.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"twitter.md","mtime":"2018-05-04T10:54:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

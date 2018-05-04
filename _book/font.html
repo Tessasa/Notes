@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>@font-face跨域问题 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="git.html" />
+    <link rel="next" href="gmail.html" />
     
+    
+    <link rel="prev" href="background.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -308,7 +310,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.18" data-path="font.html">
+        <li class="chapter active" data-level="1.18" data-path="font.html">
             
                 <a href="font.html">
             
@@ -416,7 +418,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >@font-face跨域问题</a>
     </h1>
 </div>
 
@@ -431,8 +433,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;">&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;</h1>
+                                <pre><code>&lt;style&gt;
+    @font-face
+    {
+        font-family: myFirstFont;
+        src: url(&apos;Sansation_Light.ttf&apos;),
+         url(&apos;Sansation_Light.eot&apos;); /* IE9+ */
+    }
 
+    div   {
+           font-family:myFirstFont;
+    }
+&lt;/style&gt;
+</code></pre>
                                 
                                 </section>
                             
@@ -459,8 +472,12 @@
 
             
                 
+                <a href="background.html" class="navigation navigation-prev " aria-label="Previous page: background背景">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="git.html" class="navigation navigation-next navigation-unique" aria-label="Next page: git">
+                
+                <a href="gmail.html" class="navigation navigation-next " aria-label="Next page: gmail">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -471,7 +488,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"git","level":"1.2","depth":1,"path":"git.md","ref":"git.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-05-04T11:34:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"@font-face跨域问题","level":"1.18","depth":1,"next":{"title":"gmail","level":"1.19","depth":1,"path":"gmail.md","ref":"gmail.md","articles":[]},"previous":{"title":"background背景","level":"1.17","depth":1,"path":"background.md","ref":"background.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"font.md","mtime":"2018-05-04T10:41:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

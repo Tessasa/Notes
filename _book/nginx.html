@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>nginx配置 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="git.html" />
+    <link rel="next" href="webpack.html" />
     
+    
+    <link rel="prev" href="nginx2.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -139,7 +141,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="nginx.html">
+        <li class="chapter active" data-level="1.5" data-path="nginx.html">
             
                 <a href="nginx.html">
             
@@ -416,7 +418,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >nginx配置</a>
     </h1>
 </div>
 
@@ -431,8 +433,124 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;">&#x838E;&#x838E;&#x7684;&#x7B14;&#x8BB0;</h1>
+                                <pre><code>server {
+    listen       443 ssl;
+    server_name  www.qfund.me;
 
+    ssl on;
+    ssl_certificate      /usr/local/etc/nginx/pem/Qfund58/www.qfund/server.crt;
+    ssl_certificate_key  /usr/local/etc/nginx/pem/Qfund58/www.qfund/server.key;
+
+    # ssl_session_cache    shared:SSL:1m;
+    # ssl_session_timeout  5m;
+
+    # ssl_ciphers  HIGH:!aNULL:!MD5;
+    # ssl_prefer_server_ciphers  on;
+
+    root   /www/qingsongchou/qsc_international/qfund_h5/release/html/;
+    location / {
+        index  index.html index.htm;
+    }
+}
+</code></pre><pre><code>    listen       443 ssl;
+    server_name static.qfund.me;
+
+    ssl on;
+    ssl_certificate      /usr/local/etc/nginx/pems/www.qfund/server.crt;
+    ssl_certificate_key  /usr/local/etc/nginx/pems/www.qfund/server.key;
+
+    # ssl_session_cache    shared:SSL:1m;
+    # ssl_session_timeout  5m;
+
+    # ssl_ciphers  HIGH:!aNULL:!MD5;
+    # ssl_prefer_server_ciphers  on;
+
+    root   /Users/daishasha/Work/release/;
+    # location / {
+    #    index  index.html index.htm;
+    #}
+    location ~* \.(eot|ttf|woff|svg|otf)$ {
+           add_header Access-Control-Allow-Origin *;
+     }
+}
+</code></pre><pre><code>server{
+        listen   80;
+        server_name  daishasha.com;
+
+        root /www/study/;
+        location / {
+          index  index.html index.htm;
+        }
+}
+</code></pre><pre><code>*&#x540C;&#x4E00;&#x57DF;&#x540D;&#x4E0D;&#x540C;&#x8DEF;&#x5F84;&#xFF1A;
+
+server {
+    listen       443 ssl;
+    server_name  www.qfund.me;
+
+    ssl on;
+    ssl_certificate      /usr/local/etc/nginx/pems/www.qfund/server.crt;
+    ssl_certificate_key  /usr/local/etc/nginx/pems/www.qfund/server.key;
+
+    root   /Users/daishasha/qsc/qfund_h5/release/html/;
+    location / {
+        index  index.html index.htm;
+    }
+    location ^~ /partner/ {
+        alias /Users/daishasha/qsc/qfund_tob/release/html/;
+    }
+        location ^~ /manage/public/ {
+        alias /Users/daishasha/qsc/outwork_simple/release/public/;
+    }
+</code></pre><pre><code>*&#x8DE8;&#x57DF;&#x95EE;&#x9898;
+
+ location / {
+         add_header &apos;Access-Control-Allow-Origin&apos; &apos;vue.qfund.me:8080&apos;;
+         index  index.html index.htm;
+ }
+
+
+location ~* \.(eot|ttf|woff|svg|otf)$ {
+                   add_header Access-Control-Allow-Origin *;
+}
+</code></pre><pre><code>location /project/index {
+    try_files $uri @rewrite;
+}
+location @rewrite {
+    rewrite ^/project/index/(.*) /detail.html?projuuid=$1;
+}
+</code></pre><pre><code>location /v8/main {
+    alias   /Users/daishasha/qsc/qschou-h5/static/html/v8/main/;
+    try_files $uri $uri/ /v8/main/;
+    index  index.html index.htm haha.html;
+
+}
+location /v8/my {
+    alias   /Users/daishasha/qsc/qschou-h5/static/html/v8/my/;
+    try_files $uri $uri/ /v8/my/;
+    index  index.html index.htm haha.html;
+
+}
+location /v8/lovevalue {
+    alias   /Users/daishasha/qsc/qschou-h5/static/html/v8/lovevalue/;
+    try_files $uri $uri/ /v8/lovevalue/;
+    index  index.html index.htm haha.html;
+}
+</code></pre><pre><code>location /js/v8/ {
+    alias   /Users/daishasha/qsc/qschou-h5/static/js/v8/;
+    index  index.html index.htm haha.html;
+}
+
+location /css/v8/ {
+    alias   /Users/daishasha/qsc/qschou-h5/static/css/v8/;
+    index  index.html index.htm haha.html;
+}
+
+location /img/v8/ {
+    alias   /Users/daishasha/qsc/qschou-h5/static/img/v8/;
+    index  index.html index.htm haha.html;
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -459,8 +577,12 @@
 
             
                 
+                <a href="nginx2.html" class="navigation navigation-prev " aria-label="Previous page: nginx">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="git.html" class="navigation navigation-next navigation-unique" aria-label="Next page: git">
+                
+                <a href="webpack.html" class="navigation navigation-next " aria-label="Next page: webpack">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -471,7 +593,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"git","level":"1.2","depth":1,"path":"git.md","ref":"git.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-05-04T11:34:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"nginx配置","level":"1.5","depth":1,"next":{"title":"webpack","level":"1.6","depth":1,"path":"webpack.md","ref":"webpack.md","articles":[]},"previous":{"title":"nginx","level":"1.4","depth":1,"path":"nginx2.md","ref":"nginx2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"nginx.md","mtime":"2018-05-04T11:48:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T10:06:15.138Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
