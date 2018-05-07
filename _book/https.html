@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>邮箱验证 · GitBook</title>
+        <title>生成本地开发https证书 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="gradient.html" />
+    <link rel="next" href="copy.html" />
     
     
-    <link rel="prev" href="input.html" />
+    <link rel="prev" href="mac.html" />
     
 
     </head>
@@ -219,7 +219,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="https.html">
+        <li class="chapter active" data-level="1.11" data-path="https.html">
             
                 <a href="https.html">
             
@@ -265,7 +265,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3" data-path="email.html">
+        <li class="chapter " data-level="2.3" data-path="email.html">
             
                 <a href="email.html">
             
@@ -452,7 +452,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >邮箱验证</a>
+        <a href="." >生成本地开发https证书</a>
     </h1>
 </div>
 
@@ -467,18 +467,44 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><code>&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;</code></p>
-<pre><code>//&#x5224;&#x65AD;&#x90AE;&#x7BB1;&#x662F;&#x5426;&#x4E3A;&#x7A7A;
-if ($(&apos;.donation-email input&apos;).val().trim() == &apos;&apos;) {
-    utils.alertMessage(&apos;Please enter your email&apos;);
-    return false;
-}
-</code></pre><pre><code>//&#x9A8C;&#x8BC1;&#x90AE;&#x7BB1;&#x662F;&#x5426;&#x6709;&#x6548;
-    var EMAIL = /([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/;
-    if (EMAIL.test($(&apos;.donation-email input&apos;).val()) == false) {
-        utils.alertMessage(&apos;Please enter a valid email&apos;);
-        return false;
+                                <h4 id="1&#x7EC8;&#x7AEF;&#x6267;&#x884C;&#xFF1A;vim-reqconf">1.&#x7EC8;&#x7AEF;&#x6267;&#x884C;&#xFF1A;<code>vim req.conf</code></h4>
+<pre><code>[req]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_req
+prompt = no
+[req_distinguished_name]
+C = US
+ST = VA
+L = SomeCity
+O = MyCompany
+OU = MyDivision
+CN = www.company.com
+[v3_req]
+keyUsage = keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = www.example.com
+DNS.2 = static.example.com
+DNS.3 = *.example.com
+</code></pre><h4 id="2&#x7EC8;&#x7AEF;&#x6267;&#x884C;&#xFF1A;">2.&#x7EC8;&#x7AEF;&#x6267;&#x884C;&#xFF1A;</h4>
+<pre><code>openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout cert.pem -out cert.pem -config req.conf -extensions &apos;v3_req&apos;
+</code></pre><h4 id="3&#x914D;&#x7F6E;nginx">3.&#x914D;&#x7F6E;nginx:</h4>
+<pre><code>server {
+    listen       443 ssl;
+    server_name www.example.com;
+    ssl_certificate cert.pem;
+    ssl_certificate_key cert.pem;
+    root   /www/example/release/html/;
+    location / {
+        index  index.html index.htm;
     }
+}
+</code></pre><h4 id="4&#x91CD;&#x542F;nginxsudo-nginx--s-start">4.&#x91CD;&#x542F;nginx:<code>sudo nginx -s start</code></h4>
+<h4 id="5ip&#x6307;&#x5411;&#x672C;&#x5730;127001">5.IP&#x6307;&#x5411;&#x672C;&#x5730;127.0.0.1</h4>
+<pre><code>&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;www.example.com&#xFF0C;&#x6253;&#x5F00;&#x63A7;&#x5236;&#x53F0;Security-View certificate&#xFF0C;&#x5C06;&#x8BC1;&#x4E66;&#x62D6;&#x81F3;&#x684C;&#x9762;&#x5E76;&#x53CC;&#x51FB;&#x6253;&#x5F00;&#xFF0C;&#x5728;&#x94A5;&#x5319;&#x4E32;&#x4E2D;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A;&#x4FE1;&#x4EFB;&#xFF0C;&#x5373;&#x53EF;&#x3002;
+</code></pre><pre><code>&#x539F;&#x59CB;&#x5730;&#x5740;&#x751F;&#x6210;&#x8BC1;&#x4E66;&#xFF1A;
+https://alexanderzeitler.com/articles/Fixing-Chrome-missing_subjectAltName-selfsigned-cert-openssl/
 </code></pre>
                                 
                                 </section>
@@ -506,12 +532,12 @@ if ($(&apos;.donation-email input&apos;).val().trim() == &apos;&apos;) {
 
             
                 
-                <a href="input.html" class="navigation navigation-prev " aria-label="Previous page: Input强制输入正整数">
+                <a href="mac.html" class="navigation navigation-prev " aria-label="Previous page: MAC装机必备">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="gradient.html" class="navigation navigation-next " aria-label="Next page: 竖形进度条渐变">
+                <a href="copy.html" class="navigation navigation-next " aria-label="Next page: 复制到粘贴板Copied to clipboard">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -522,7 +548,7 @@ if ($(&apos;.donation-email input&apos;).val().trim() == &apos;&apos;) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"邮箱验证","level":"2.3","depth":1,"next":{"title":"竖形进度条渐变","level":"3.1","depth":1,"path":"gradient.md","ref":"gradient.md","articles":[]},"previous":{"title":"Input强制输入正整数","level":"2.2","depth":1,"path":"input.md","ref":"input.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"email.md","mtime":"2018-05-04T10:37:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-07T07:41:14.979Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"生成本地开发https证书","level":"1.11","depth":1,"next":{"title":"复制到粘贴板Copied to clipboard","level":"2.1","depth":1,"path":"copy.md","ref":"copy.md","articles":[]},"previous":{"title":"MAC装机必备","level":"1.10","depth":1,"path":"mac.md","ref":"mac.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"https.md","mtime":"2018-05-07T08:12:40.913Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-07T07:41:14.979Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
