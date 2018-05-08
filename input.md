@@ -16,7 +16,11 @@
 ```
 
 ```
-type="number",最大字数的限制是没有用的
+input[type=tel],
+在移动设备上，是支持maxlength的，而且只能输入数字键盘。
 
-在移动设备上，input[type=tel] 是支持maxlength的，而且只能输入数字键盘。
+当input[type=number]时，
+输入的如果是数字，则maxlength有效，输入的不为数字而是字母或者汉字，则maxlength无效，
+
+当input[type=text]时，此时设置的maxlength只对字母或者汉字有效，对数字无效.
 ```
