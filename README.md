@@ -32,3 +32,6 @@
 * [facebook](facebook.md)
 * [link](link.md)
 * [pdf2html](pdf2html.md)
+
+# 项目中遇到的坑
+* [[Vue warn]:Error in c created hook:"SyntacError"](login.md)
