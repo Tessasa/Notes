@@ -1,7 +1,7 @@
 ###登陆机制：
 
 ```
-页面：https://www.company.com#0（#0在这里作用是标记当前页面的tab选项卡所处的位置）
+页面：https://www.company.com#0（#0在这里作用是标记当前页面的tab选项卡所处的位置）
 
 跳转登陆地址：https://passport.company.com/redir_url=https://www.company.com#0
 

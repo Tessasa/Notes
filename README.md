@@ -25,6 +25,7 @@
 * [@font-face跨域问题](font.md)
 * [英文排列，两边对齐](word.md)
 * [多行省略号···](ellipsis.md)
+* [文字跑马灯](coming.md)
 
 # 国际版
 * [gmail](gmail.md)

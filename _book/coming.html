@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>@font-face跨域问题 · GitBook</title>
+        <title>文字跑马灯 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="word.html" />
+    <link rel="next" href="gmail.html" />
     
     
-    <link rel="prev" href="background.html" />
+    <link rel="prev" href="ellipsis.html" />
     
 
     </head>
@@ -311,7 +311,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.3" data-path="font.html">
+        <li class="chapter " data-level="3.3" data-path="font.html">
             
                 <a href="font.html">
             
@@ -350,7 +350,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.6" data-path="coming.html">
+        <li class="chapter active" data-level="3.6" data-path="coming.html">
             
                 <a href="coming.html">
             
@@ -485,7 +485,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >@font-face跨域问题</a>
+        <a href="." >文字跑马灯</a>
     </h1>
 </div>
 
@@ -500,18 +500,121 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <pre><code>&lt;style&gt;
-    @font-face
-    {
-        font-family: myFirstFont;
-        src: url(&apos;Sansation_Light.ttf&apos;),
-         url(&apos;Sansation_Light.eot&apos;); /* IE9+ */
+                                <h3 id="less">less</h3>
+<pre><code>// &#x8DD1;&#x9A6C;&#x706F;&#x6548;&#x679C;
+.tips {
+    display: block;
+    height: 44px;
+    position: relative;
+    background: #f5f4ef;
+
+    .light {
+        position: absolute;
+        width: 40px;
+        height: 44px;
+        .lamp {
+            position: absolute;
+            bottom: 14px;
+            left: 19px;
+            width: 13px;
+            height: 16px;
+            background: url(../img/light1.png) no-repeat center;
+            background-size: 13px 16px;
+        }
+        .flashlight {
+            position: absolute;
+            top: 9px;
+            left: 15px;
+            width: 21px;
+            height: 10px;
+            background: url(../img/light2.png) no-repeat center;
+            background-size: 21px 10px;
+            animation: light 1s ease-in-out infinite;
+        }
     }
 
-    div   {
-           font-family:myFirstFont;
+    .marquee {
+        margin-left: 40px;
+        height: 100%;
+        width: 100%;
+        font-size: 14px;
+        color: #ff8919;
+        overflow: hidden;
+        position: relative;
     }
-&lt;/style&gt;
+
+    .marquee .tip {
+        display: block;
+        width: 200%;
+        height: 100%;
+        line-height: 44px;
+        position: absolute;
+        left: 40px;
+        overflow: hidden;
+        animation: marquee 10s linear infinite;
+    }
+
+    .marquee span {
+        float: left;
+        width: 50%;
+        strong {
+            color: #D0021B;
+            font-weight: 400;
+        }
+    }
+    .arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 32px;
+        height: 44px;
+        background: #f5f4ef;
+        &amp;::after {
+            content: &apos;&apos;;
+            position: absolute;
+            right: 15px;
+            top: 18px;
+            width: 8px;
+            height: 8px;
+            transform: translateY(-50%);
+            border-bottom: solid 1px #FF8919;
+            border-right: solid 1px #FF8919;
+            transform: rotate(315deg);
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+@keyframes light {
+    0% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+</code></pre><h3 id="html">html</h3>
+<pre><code>  &lt;a class=&quot;tips&quot; id=&quot;hzTopbarAdv&quot; href=&quot;#&quot;&gt;
+        &lt;div class=&quot;light&quot;&gt;
+            &lt;i class=&quot;lamp&quot;&gt;&lt;/i&gt;
+            &lt;i class=&quot;flashlight&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;marquee&quot;&gt;
+            &lt;div class=&quot;tip&quot;&gt;
+                &lt;span&gt;&#x60A8;&#x7684;&#x8D26;&#x6237;&#x5185;&#x6709;&#x4F1A;&#x5458;&#x5361;&#x672A;&#x5B8C;&#x5584;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x4E8E;90&#x5929;&#x5185;&#x5B8C;&#x5584;&#x4FE1;&#x606F;&lt;/span&gt;
+                &lt;span&gt;&#x60A8;&#x7684;&#x8D26;&#x6237;&#x5185;&#x6709;&#x4F1A;&#x5458;&#x5361;&#x672A;&#x5B8C;&#x5584;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x4E8E;90&#x5929;&#x5185;&#x5B8C;&#x5584;&#x4FE1;&#x606F;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;i class=&quot;arrow&quot; href=&quot;&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
 </code></pre>
                                 
                                 </section>
@@ -539,12 +642,12 @@
 
             
                 
-                <a href="background.html" class="navigation navigation-prev " aria-label="Previous page: background背景">
+                <a href="ellipsis.html" class="navigation navigation-prev " aria-label="Previous page: 多行省略号···">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="word.html" class="navigation navigation-next " aria-label="Next page: 英文排列，两边对齐">
+                <a href="gmail.html" class="navigation navigation-next " aria-label="Next page: gmail">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -555,7 +658,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"@font-face跨域问题","level":"3.3","depth":1,"next":{"title":"英文排列，两边对齐","level":"3.4","depth":1,"path":"word.md","ref":"word.md","articles":[]},"previous":{"title":"background背景","level":"3.2","depth":1,"path":"background.md","ref":"background.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"font.md","mtime":"2018-05-07T07:11:54.086Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-13T08:17:03.431Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"文字跑马灯","level":"3.6","depth":1,"next":{"title":"gmail","level":"4.1","depth":1,"path":"gmail.md","ref":"gmail.md","articles":[]},"previous":{"title":"多行省略号···","level":"3.5","depth":1,"path":"ellipsis.md","ref":"ellipsis.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"coming.md","mtime":"2018-05-13T10:09:03.090Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-13T08:17:03.431Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
