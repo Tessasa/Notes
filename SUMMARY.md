@@ -10,6 +10,7 @@
 * [npm](npm.md)
 * [MAC装机必备](mac.md)
 * [生成本地开发https证书](https.md)
+* [VUE跳转链接](vue-link.md)
 
 # JS
 * [复制到粘贴板Copied to clipboard](copy.md)
@@ -22,6 +23,7 @@
 * [@font-face跨域问题](font.md)
 * [英文排列，两边对齐](word.md)
 * [多行省略号···](ellipsis.md)
+* [VUE中控制文本溢出···](vue-ellipas.md)
 * [文字跑马灯](coming.md)
 
 # 国际版
