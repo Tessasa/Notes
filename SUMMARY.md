@@ -24,6 +24,7 @@
 * [英文排列，两边对齐](word.md)
 * [多行省略号···](ellipsis.md)
 * [VUE中控制文本溢出···](vue-ellipas.md)
+* [Vue](vue.md)
 * [文字跑马灯](coming.md)
 
 # 国际版

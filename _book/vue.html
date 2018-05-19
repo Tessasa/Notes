@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Input强制输入正整数 · GitBook</title>
+        <title>Vue · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="email.html" />
+    <link rel="next" href="coming.html" />
     
     
-    <link rel="prev" href="copy.html" />
+    <link rel="prev" href="vue-ellipas.html" />
     
 
     </head>
@@ -265,7 +265,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2" data-path="input.html">
+        <li class="chapter " data-level="2.2" data-path="input.html">
             
                 <a href="input.html">
             
@@ -376,7 +376,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.7" data-path="vue.html">
+        <li class="chapter active" data-level="3.7" data-path="vue.html">
             
                 <a href="vue.html">
             
@@ -524,7 +524,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Input强制输入正整数</a>
+        <a href="." >Vue</a>
     </h1>
 </div>
 
@@ -539,25 +539,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="input-&#x5F3A;&#x5236;&#x8F93;&#x5165;&#x6B63;&#x6574;&#x6570;"><code>Input &#x5F3A;&#x5236;&#x8F93;&#x5165;&#x6B63;&#x6574;&#x6570;</code></h3>
-<pre><code>&lt;input
-        type=&quot;tell&quot;
-        class=&quot;count-number&quot;
-        pattern=&quot;[1-9][0-9]{0,6}&quot;
-        maxlength=&quot;5&quot;
-        name=&quot;money&quot;
-        autocapitalize=&quot;off&quot;
-        autocorrect=&quot;off&quot;
-        onkeyup=&quot;this.value=this.value.replace(/^[0]+|[^0-9]/g,&apos;&apos;)&quot;
-        onafterpaste=&quot;this.value=this.value.replace(/^[0]+|[^0-9]/g,&apos;&apos;)&quot;
-        v-model=&apos;countNumber&apos;&gt;
-</code></pre><pre><code>input[type=tel],
-&#x5728;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#xFF0C;&#x662F;&#x652F;&#x6301;maxlength&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x53EA;&#x80FD;&#x8F93;&#x5165;&#x6570;&#x5B57;&#x952E;&#x76D8;&#x3002;
-
-&#x5F53;input[type=number]&#x65F6;&#xFF0C;
-&#x8F93;&#x5165;&#x7684;&#x5982;&#x679C;&#x662F;&#x6570;&#x5B57;&#xFF0C;&#x5219;maxlength&#x6709;&#x6548;&#xFF0C;&#x8F93;&#x5165;&#x7684;&#x4E0D;&#x4E3A;&#x6570;&#x5B57;&#x800C;&#x662F;&#x5B57;&#x6BCD;&#x6216;&#x8005;&#x6C49;&#x5B57;&#xFF0C;&#x5219;maxlength&#x65E0;&#x6548;&#xFF0C;
-
-&#x5F53;input[type=text]&#x65F6;&#xFF0C;&#x6B64;&#x65F6;&#x8BBE;&#x7F6E;&#x7684;maxlength&#x53EA;&#x5BF9;&#x5B57;&#x6BCD;&#x6216;&#x8005;&#x6C49;&#x5B57;&#x6709;&#x6548;&#xFF0C;&#x5BF9;&#x6570;&#x5B57;&#x65E0;&#x6548;.
+                                <h3 id="ref">ref</h3>
+<pre><code>&lt;div class=&quot;detail-wrapper&quot; @click=&quot;detail&quot; ref=&quot;detail&quot; v-show=&quot;isShow&quot;&gt;
+                &lt;div class=&quot;detail&quot;&gt;&#x8BE6;&#x60C5;&gt;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+</code></pre><pre><code>detail(e){
+                this.isShow = false;
+                this.text = this._text;
+            }
 </code></pre>
                                 
                                 </section>
@@ -585,12 +574,12 @@
 
             
                 
-                <a href="copy.html" class="navigation navigation-prev " aria-label="Previous page: 复制到粘贴板Copied to clipboard">
+                <a href="vue-ellipas.html" class="navigation navigation-prev " aria-label="Previous page: VUE中控制文本溢出···">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="email.html" class="navigation navigation-next " aria-label="Next page: 邮箱验证">
+                <a href="coming.html" class="navigation navigation-next " aria-label="Next page: 文字跑马灯">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -601,7 +590,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Input强制输入正整数","level":"2.2","depth":1,"next":{"title":"邮箱验证","level":"2.3","depth":1,"path":"email.md","ref":"email.md","articles":[]},"previous":{"title":"复制到粘贴板Copied to clipboard","level":"2.1","depth":1,"path":"copy.md","ref":"copy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"input.md","mtime":"2018-05-08T14:20:00.414Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-16T05:12:23.993Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vue","level":"3.7","depth":1,"next":{"title":"文字跑马灯","level":"3.8","depth":1,"path":"coming.md","ref":"coming.md","articles":[]},"previous":{"title":"VUE中控制文本溢出···","level":"3.6","depth":1,"path":"vue-ellipas.md","ref":"vue-ellipas.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue.md","mtime":"2018-05-16T05:12:10.866Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-16T05:12:23.993Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
