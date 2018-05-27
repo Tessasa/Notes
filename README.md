@@ -19,6 +19,7 @@
 * [复制到粘贴板Copied to clipboard](copy.md)
 * [Input强制输入正整数](input.md)
 * [邮箱验证](email.md)
+* [document.title修改](title.md)
 
 # LESS
 * [竖形进度条渐变](gradient.md)
@@ -29,6 +30,7 @@
 * [VUE中控制文本溢出···](vue-ellipas.md)
 * [Vue](vue.md)
 * [文字跑马灯](coming.md)
+* [点击后出现闪动或灰色背景](click.md)
 
 # 国际版
 * [gmail](gmail.md)
@@ -38,4 +40,5 @@
 * [pdf2html](pdf2html.md)
 
 # 项目中遇到的坑
-* [[Vue warn]:Error in c created hook:"SyntacError"](login.md)
+* [Vue登陆坑[Vue warn]:Error in c created hook:"SyntacError"](login.md)
+* [乐视云播放器不支持https](letv.md)
