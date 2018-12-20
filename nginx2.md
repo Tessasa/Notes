@@ -13,8 +13,8 @@ ps -ef  | grep nginx 					查看进程是否在后台运行
 sudo lsof -i :443 | awk '{print $2}' | tail +2 |uniq |xargs sudo kill -9     通杀所有占用443端口的服务
 
 
-curl https://m2.qschou.com
-curl -v https://m2.qschou.com 查看报文
+curl https://m2.qqhou.com
+curl -v https://m2.qqhou.com 查看报文
 ```
 
 

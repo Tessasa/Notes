@@ -1,11 +1,11 @@
 ```
 server {
     listen       443 ssl;
-    server_name  www.qfund.me;
+    server_name  www.qq.me;
 
     ssl on;
-    ssl_certificate      /usr/local/etc/nginx/pem/Qfund58/www.qfund/server.crt;
-    ssl_certificate_key  /usr/local/etc/nginx/pem/Qfund58/www.qfund/server.key;
+    ssl_certificate      /usr/local/etc/nginx/pem/qq58/qq.me/server.crt;
+    ssl_certificate_key  /usr/local/etc/nginx/pem/qq58/qq.me/server.key;
 
     # ssl_session_cache    shared:SSL:1m;
     # ssl_session_timeout  5m;
@@ -13,7 +13,7 @@ server {
     # ssl_ciphers  HIGH:!aNULL:!MD5;
     # ssl_prefer_server_ciphers  on;
 
-    root   /www/qingsongchou/qsc_international/qfund_h5/release/html/;
+    root   /www/qq/qq_international/qq_h5/release/html/;
     location / {
         index  index.html index.htm;
     }
@@ -22,11 +22,11 @@ server {
 
 ```
     listen       443 ssl;
-    server_name static.qfund.me;
+    server_name static.qq.me;
 
     ssl on;
-    ssl_certificate      /usr/local/etc/nginx/pems/www.qfund/server.crt;
-    ssl_certificate_key  /usr/local/etc/nginx/pems/www.qfund/server.key;
+    ssl_certificate      /usr/local/etc/nginx/pems/qq.me/server.crt;
+    ssl_certificate_key  /usr/local/etc/nginx/pems/qq.me/server.key;
 
     # ssl_session_cache    shared:SSL:1m;
     # ssl_session_timeout  5m;
@@ -61,21 +61,21 @@ server{
 
 server {
     listen       443 ssl;
-    server_name  www.qfund.me;
+    server_name  www.qq.me;
 
     ssl on;
-    ssl_certificate      /usr/local/etc/nginx/pems/www.qfund/server.crt;
-    ssl_certificate_key  /usr/local/etc/nginx/pems/www.qfund/server.key;
+    ssl_certificate      /usr/local/etc/nginx/pems/qq.me/server.crt;
+    ssl_certificate_key  /usr/local/etc/nginx/pems/qq.me/server.key;
 
-    root   /Users/daishasha/qsc/qfund_h5/release/html/;
+    root   /Users/daishasha/qq/qq_h5/release/html/;
     location / {
         index  index.html index.htm;
     }
     location ^~ /partner/ {
-        alias /Users/daishasha/qsc/qfund_tob/release/html/;
+        alias /Users/daishasha/qq/qq_tob/release/html/;
     }
         location ^~ /manage/public/ {
-        alias /Users/daishasha/qsc/outwork_simple/release/public/;
+        alias /Users/daishasha/qq/outwork_simple/release/public/;
     }
 ```
 
@@ -83,7 +83,7 @@ server {
 *跨域问题
 
  location / {
-         add_header 'Access-Control-Allow-Origin' 'vue.qfund.me:8080';
+         add_header 'Access-Control-Allow-Origin' 'vue.qq.me:8080';
          index  index.html index.htm;
  }
 
@@ -104,19 +104,19 @@ location @rewrite {
 
 ```
 location /v8/main {
-    alias   /Users/daishasha/qsc/qschou-h5/static/html/v8/main/;
+    alias   /Users/daishasha/static/html/v8/main/;
     try_files $uri $uri/ /v8/main/;
     index  index.html index.htm haha.html;
 
 }
 location /v8/my {
-    alias   /Users/daishasha/qsc/qschou-h5/static/html/v8/my/;
+    alias   /Users/daishasha/static/html/v8/my/;
     try_files $uri $uri/ /v8/my/;
     index  index.html index.htm haha.html;
 
 }
 location /v8/lovevalue {
-    alias   /Users/daishasha/qsc/qschou-h5/static/html/v8/lovevalue/;
+    alias   /Users/daishasha/static/html/v8/lovevalue/;
     try_files $uri $uri/ /v8/lovevalue/;
     index  index.html index.htm haha.html;
 }
@@ -124,17 +124,17 @@ location /v8/lovevalue {
 
 ```
 location /js/v8/ {
-    alias   /Users/daishasha/qsc/qschou-h5/static/js/v8/;
+    alias   /Users/daishasha/static/js/v8/;
     index  index.html index.htm haha.html;
 }
 
 location /css/v8/ {
-    alias   /Users/daishasha/qsc/qschou-h5/static/css/v8/;
+    alias   /Users/daishasha/static/css/v8/;
     index  index.html index.htm haha.html;
 }
 
 location /img/v8/ {
-    alias   /Users/daishasha/qsc/qschou-h5/static/img/v8/;
+    alias   /Users/daishasha/static/img/v8/;
     index  index.html index.htm haha.html;
 }
 ```
